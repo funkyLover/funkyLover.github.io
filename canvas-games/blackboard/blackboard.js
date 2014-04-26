@@ -24,7 +24,7 @@ $(document).ready(function(){
         eraserFlag = eraserFlag ? false : true;
         if(eraserFlag){
             $("body").css({
-                cursor : "url('http://localhost:63342/canvas-games/image/eraser.cur'), default"
+                cursor : "url('http://funkylover.github.io/canvas-games/image/eraser.cur'), default"
             });
         } else if(!eraserFlag){
             $("body").css({
