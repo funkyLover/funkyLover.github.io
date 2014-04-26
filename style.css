@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+#demo {
+    padding-left: 80px;
+    margin: 0 180px;
+}
+
+div {
+    display: inline-block;
+}
+
+p{
+    text-align: center;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
