@@ -1,0 +1,9 @@
+img {
+    width: 60px;
+    height: 60px;
+}
+
+#bird {
+    position: absolute;
+    left: 300px;
+}

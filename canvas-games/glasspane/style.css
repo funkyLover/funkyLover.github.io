@@ -1,0 +1,40 @@
+body {
+    background-color: #dddddd;
+}
+
+#canvas {
+    margin: 10px;
+    background-color: #ffffff;
+    border: thin solid #aaaaaa;
+}
+
+#glasspane {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    padding: 0px 20px 10px 10px;
+    background-color: rgba(0,0,0,0.3);
+    border: thin solid rgba(0,0,0,0.6);
+    font: 12px;
+    cursor: pointer;
+    box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
+}
+
+#glasspane h2 {
+    font-weight: normal;
+    font-size: 2em;
+}
+
+#glasspane button:hover {
+    background-color: rgba(51,153,255,0.7);
+}
+
+#glasspane button {
+    background-color: rgba(51,153,255,0.4);
+    font-size: 3.5em;
+}
+
+#glasspane p {
+    margin: 10px;
+    font-size: 12pt;
+}

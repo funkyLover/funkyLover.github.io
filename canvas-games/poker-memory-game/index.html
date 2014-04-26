@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Memory game</title>
+    <style>
+        form{
+            background-color: #b55;
+            width: 1100px;
+        }
+        div {
+            width: 1050px;
+            margin: 100px auto;
+        }
+        input{
+            text-align: right;
+        }
+    </style>
+    <script src="..\js\poker.min.js"></script>
+    <script>
+        var ctx;
+        var canvas1;
+        var firstPick = true;
+        var firstCard;
+        var secondCard;
+        var firstSx = 30;
+        var firstSy = 50;
+        var pokerHeight = 100;
+        var pokerWidth = 75;
+        var suit =  ['h', 's']  ;
+        var point = ['A','2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+        var matched;
+        var startTime;
+        var deck = [];
+        var tableColor = "rgb(255,255,255)";
+
+        function Poker(sx,sy,sHeight,SPoint,SSuit){
+            this.sx = sx;
+            this.sy = sy;
+            this.sHeight = sHeight;
+            this.SPoint = SPoint;
+            this.SSuit = SSuit;
+
+            this.drawPoker = drawPoker;
+            this.drawBack = drawBack;
+
+        }
+
+        function makeDeck(){
+            var i;
+            var j;
+            var aPoker;
+            var bPoker;
+            var cx = firstSx;
+            var cy = firstSy;
+
+            for(i=0;i<13;i++){
+                 aPoker = new Poker(cx,cy,pokerHeight,point[i],suit[0]);
+                 deck.push(aPoker);
+                 bPoker = new Poker(cx,cy+pokerHeight,pokerHeight,point[i],suit[0]);
+                 deck.push(bPoker);
+                 cx = cx + pokerWidth;
+                 aPoker.drawBack();
+                 bPoker.drawBack();
+             }
+            shuffle();
+        }
+        function shuffle(){
+            var i;
+            var k ;
+            var holderPoint;
+            var holderSuit;
+            var dl = deck.length;
+            var nt;
+            for(nt=0;nt<3*dl;nt++){
+                i = Math.floor(Math.random()*dl);
+                k = Math.floor(Math.random()*dl);
+                holderPoint = deck[i].SPoint;
+                holderSuit = deck[i].SSuit;
+                deck[i].SPoint = deck[k].SPoint;
+                deck[i].SSuit = deck[k].SSuit;
+                deck[k].SPoint = holderPoint;
+                deck[k].SSuit = holderSuit;
+
+            }
+        }
+        function drawPoker(){
+            ctx.drawPokerCard(this.sx,this.sy,this.sHeight,this.SSuit,this.SPoint);
+
+        }
+
+        function drawBack(){
+            ctx.drawPokerBack(this.sx, this.sy, this.sHeight, '#b55', '#a22');
+        }
+        function choose(ev){
+            var mx;
+            var my;
+            var pick1;
+            var pick2;
+            if(ev.layerX || ev.layerX == 0){
+                mx = ev.layerX;
+                my = ev.layerY;
+            }else if(ev.offsetX || ev.offsetX == 0){
+                mx = ev.offsetX;
+                my = ev.offsetX;
+            }
+            var i;
+            var poker;
+            for(i=0;i<deck.length;i++){
+                poker= deck[i];
+                if(poker.sx>=0)
+                    if((mx>poker.sx) && (mx<poker.sx+pokerWidth) && (my>poker.sy) && (my<poker.sy+pokerHeight))
+                        if((firstPick) || (i!=firstCard))
+                            break;
+            }
+
+            if(i<deck.length){
+                if(firstPick){
+                    firstCard = i;
+                    firstPick = false;
+                    pick1 = poker;
+                    pick1.drawPoker();
+                }
+                else{
+                    secondCard = i;
+                    pick2 = poker;
+                    pick2.drawPoker();
+                    if(deck[i].SPoint == deck[firstCard].SPoint && deck[i].SSuit == deck[firstCard].SSuit){
+                        matched = true;
+                        var nm = 1+Number(document.f.count.value);
+                        document.f.count.value = String(nm);
+                        if(nm>=.5*deck.length){
+                            var now = new Date();
+                            var nt = Number(now.getTime());
+                            var seconds = Math.floor(.5+(nt-startTime)/1000);
+                            document.f.elapsed.value = String(seconds);
+                        }
+                    }
+                    else{
+                        matched = false;
+                    }
+                    firstPick = true;
+                    setTimeout(flipBack,500);
+                }
+            }
+        }
+        function flipBack(){
+            if(!matched){
+                deck[firstCard].drawBack();
+                deck[secondCard].drawBack();
+            }
+            else{
+                ctx.fillStyle = tableColor;
+                ctx.fillRect(deck[secondCard].sx,deck[secondCard].sy,pokerWidth,pokerHeight) ;
+                ctx.fillRect(deck[firstCard].sx,deck[firstCard].sy,pokerWidth,pokerHeight) ;
+                deck[secondCard].sx = -1;
+                deck[firstCard].sx = -1;
+
+            }
+
+        }
+        function init(){
+            ctx = document.getElementById('canvas').getContext('2d');
+            var canvas1 ;
+            canvas1 = document.getElementById('canvas');
+            canvas1.addEventListener('click',choose,false);
+            makeDeck();
+            document.f.count.value = 0;
+            document.f.elapsed.value = " ";
+            startTime = new Date();
+            startTime = Number(startTime.getTime());
+            shuffle();
+        }
+    </script>
+
+</head>
+<body onload="init();">
+<div>
+<canvas id="canvas" width="1050" height="250">
+    Your browser doesn't support the html5 element canvas.
+</canvas>
+<form name="f">
+    <br/>
+    Number of matches:<input type="text" name="count" value="0" size="1"/>
+    <br/>
+    Time taken to complete puzzle:<input type="text" name="elapsed" value=" " size="4"/> seconds.
+    <br/>
+    Click on two cards to see if you have a match.
+    <br/>
+</form>
+</div>
+
+
+
+</body>
+</html>

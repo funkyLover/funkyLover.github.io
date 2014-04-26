@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="game.js"></script>
+    <link href="game.css" rel="stylesheet">
+</head>
+<body>
+<div id="gameStats">
+    <p>Score:<span class="gameScore"></span> points</p>
+    <p><a class="gameReset" href="">Reset</a></p>
+</div>
+<div id="explain">
+    <h3>a</h3>
+    <p>let the boxes move down</p>
+    <h3>j</h3>
+    <p>choose the first box on the left<br/>
+        or move the box to left</p>
+    <h3>k</h3>
+    <p>choose the first box in the middle<br/>
+        or move the box to middle</p>
+    <h3>l</h3>
+    <p>choose the first box on the right<br/>
+        or move the box to right</p>
+</div>
+<div id="game">
+    <div id="gameUI">
+        <div id="gameIntro">
+            <h1>Carry Boxes</h1>
+            <p>Click play and then press any key to start.</p>
+            <p><a id="gamePlay" class="button" href="">Play</a></p>
+        </div>
+
+        <div id="gameComplete">
+            <h1>Game over</h1>
+            <p>You got <span class="gameScore"></span> points.</p>
+            <p><a class="gameReset button" href="">Play again</a></p>
+        </div>
+    </div>
+        <canvas id="gameCanvas" width="360  " height="600">
+        </canvas>
+    </div>
+</div>
+</body>
+</html>
