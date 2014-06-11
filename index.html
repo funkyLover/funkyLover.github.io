@@ -1,10 +1,173 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="zh" manifest="main.manifest">
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <title>Traditional Resume</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="StyleSheet" href="css/reset.css"/>
+    <link type="text/css" rel="StyleSheet" href="css/main.css"/>
+    <style type="text/css">
+        body{
+            background-image:url(images/bg.png);
+        }
+        .item-title{
+            width:100px;
+            padding:4px;
+            line-height: 1.8;
+        }
+        .item-content{
+            padding:4px;
+            line-height: 1.8;
+        }
+        li{
+            padding:7px 0px;
+        }
+        li::before{
+            content:url(./images/yes.png);
+            padding-right:6px;
+            vertical-align: middle;
+        }
+        .item-wrap{
+            display:-moz-box;
+            display:-webkit-box;
+            display:box;
+            padding:6px 0px;
+            border-bottom:solid 1px #aaa;
+            margin-bottom:6px;
+            width: 100%;
+        }
+        .item-box-left{
+            width: 100px;
+        }
+        .item-box-right{
+            width: 700px;
+        }
+        .item-title-hl{
+            font-size:18px;
+            padding:4px;
+            background-color: #ddd;
+            border-bottom:solid 2px #ccc;
+        }
+        .project-title{
+            font-size:18px;
+            line-height: 1.8;
+            padding:4px;
+        }
+        .project-sub-title{
+            padding:4px;
+            line-height: 1.8;
+            width:70px;
+        }
+        .shadow{
+            position: relative;
+            top:-32px;
+            left:0px;
+            height:32px;
+            width:32px;
+            background-image: -moz-linear-gradient(center bottom, rgb(227,227,227) 30%, rgba(255,255,255,0) 100%);
+            background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0.3, rgb(227,227,227)), color-stop(0.7, rgba(255,255,255,0)));
+            filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColor=#e8e8e8, EndColorStr=#ffffff);
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script>
 </head>
-<body>
-从头再来
+<body style="margin:0px auto;width:800px;">
+<header>
+    <section style="padding:6px 0px;">
+        <hr/>
+    </section>
+</header>
+<article style="padding:10px 0px;">
+<section>
+    <table style="width:100%">
+        <tr>
+            <td class="item-title">姓名：</td>
+            <td class="item-content">林龙辉</td>
+            <td class="item-title">github：</td>
+            <td class="item-content"><a href="https://github.com/funkyLover">funkyLover</a></td>
+        </tr>
+        <tr>
+            <td class="item-title">求职意向：</td>
+            <td class="item-content">nodejs/html5/java/前端工程师</td>
+            <td class="item-title">英语水平：</td>
+            <td class="item-content">CET-4</td>
+        </tr>
+        <tr>
+            <td class="item-title">电话号码：</td>
+            <td class="item-content">15902010181</td>
+            <td class="item-title">邮箱：</td>
+            <td class="item-content">
+                <a title="给我发邮件" href="mailto:bboynomad@qq.com">bboynomad@qq.com</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="item-title">性别：</td>
+            <td class="item-content">男</td>
+            <td class="item-title">出生月年：</td>
+            <td class="item-content">1992.03</td>
+        </tr>
+    </table>
+</section>
+<section style="margin:4px 0px; height:2px; background-color:#888;"></section>
+<section class="item-wrap">
+    <section class="item-box-left">
+        <span class="item-title-hl">专业技能</span>
+    </section>
+    <section class="item-box-right">
+        <ul style="list-style-type:none">
+            <li>熟悉 HTML、JavaScript、CSS、HTML5 canvas</li>
+            <li>熟悉前端常用框架如jquery underscore等</li>
+            <li>掌握JavaWeb开发</li>
+            <li>熟悉nodejs开发</li>
+        </ul>
+    </section>
+</section>
+<section class="item-wrap">
+    <section class="item-box-left">
+        <span class="item-title-hl">项目经验</span>
+    </section>
+    <section class="item-box-right">
+        <section>
+            <table style="margin-bottom:10px;">
+                <tr>
+                    <td class="project-sub-title" valign="top">演讲家</td>
+                    <td class="item-content">已挂在bae上 <a href="http://yjjapp.duapp.com">yjjapp.duapp.com</a></td>
+                </tr>
+                <tr>
+                    <td class="project-sub-title" valign="top">freeblog</td>
+                    <td class="item-content">github托管 <a href="https://github.com/3dobe/freeblog">github.com/3dobe/freeblog</a>(面向开发人员的简易博客框架)</td>
+                </tr>
+                <tr>
+                    <td class="project-sub-title" valign="top">邑大赏金猎人</td>
+                    <td class="item-content">github托管 <a href="https://github.com/3dobe/bounty-hunter">github.com/3dobe/bounty-hunter</a></td>
+                </tr>
+                <tr>
+                    <td class="project-sub-title" valign="top">canvas小游戏</td>
+                    <td class="item-content">github page <a href="http://funkylover.github.io/canvas-games">funkylover.github.io/canvas-games</a><br>(不算项目了,只是自己学习canvas时做的小游戏)</td>
+                </tr>
+            </table>
+        </section>
+    </section>
+</section>
+<section class="item-wrap">
+    <section class="item-box-left">
+        <span class="item-title-hl">自我评价</span>
+    </section>
+    <section class="item-box-right" style="margin-bottom:10px;">
+        <ul style="list-style-type:none">
+            <li>自信,好胜</li>
+            <li>乐天派</li>
+        </ul>
+    </section>
+</section>
+<section class="item-wrap" style="border:0;">
+    <section class="item-box-left">
+        <span class="item-title-hl">兴趣爱好</span>
+    </section>
+    <section class="item-box-right">
+        跳舞、吉他、单车、看书、电影、音乐
+    </section>
+</section>
+</article>
+
 </body>
 </html>
