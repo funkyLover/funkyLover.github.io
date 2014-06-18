@@ -1,3 +1,3 @@
 funkyLover.github.io
 ====================
-个人简历
+[my resume](funkylover.github.io/resume)
