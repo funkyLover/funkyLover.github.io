@@ -144,7 +144,7 @@ nav section {
   transition: background .3s ease;
   text-shadow: 0 -1px rgba(0,0,0, .5);
   display: block;
-  padding: .6em 5em;
+  padding: .6em 5em .6em 3em;
   width: 100%;
 }
 
@@ -175,6 +175,9 @@ nav section {
     font-size: 30px;
   }
 
+  .nav-collapse a {
+    padding: .6em 5em;
+  }
   nav section {
     margin-top: 5px;
     margin-bottom: 30px;
