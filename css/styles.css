@@ -176,8 +176,8 @@ nav section {
   }
 
   nav section {
-    margin-top: 10px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 30px;
   }
   .nav-collapse.opened { max-height: 9999px }
   .nav-collapse a:hover { background: rgba(255,255,255, .1) }
