@@ -187,11 +187,6 @@ nav section {
     display: block;
     overflow: hidden;
   }
-
-  body {
-    background-image: url(../img/m-bg.jpg);
-  }
-
   .nav-collapse {
     top: 0;
     width: 100%;
@@ -302,5 +297,9 @@ nav section {
   }
   article {
     margin:0 10px 20px;
+  }
+  body {
+    background-image: url(../img/m-bg.jpg);
+    background-size: 440px;
   }
 }
