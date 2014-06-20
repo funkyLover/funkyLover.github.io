@@ -64,6 +64,38 @@ a {
   text-decoration: none;
 }
 
+article {
+  padding: 40px 60px 60px;
+  margin:0 55px 20px;
+  background: rgba(255,255,255,0.86) ;
+}
+
+article header {
+  font-size: 40px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+}
+
+article header:after {
+  border-top: 1px solid #e5e5e5;
+  bottom: 0;
+  left: 50%;
+  margin: 0 0 0 -30%;
+  position: absolute;
+  width: 60%;
+}
+
+header a {
+  text-decoration:none;
+  color: rgb(0,0,0);
+}
+header a:hover {
+  color: rgb(255,153,51);
+  border-bottom: 3px solid rgb(255,153,51);
+}
+
 a:active,
 a:hover {
   outline: 0;
@@ -229,12 +261,27 @@ nav section {
   .main {
     -webkit-overflow-scrolling: auto;
     box-shadow: none;
-    padding: 0 2em 2em;
+    padding: 0em 2em 2em;
     border-radius: 0;
     position: relative;
     width: 100%;
     overflow: hidden;
   }
+
+  article {
+    margin: 0 30px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  article header {
+    font-size: 35px;
+  }
+
+  .frist-article {
+    margin-top: 60px;
+  }
+
   .main::-webkit-scrollbar { background-color: transparent }
 }
 
@@ -251,4 +298,13 @@ nav section {
   .nav-collapse { width: 23em }
   .main { width: auto; left: 23em }
   .nav-collapse a { padding-left: 5em}
+}
+
+@media screen and (max-width: 31em) {
+  article header {
+    font-size: 25px;
+  }
+  article {
+    margin:0 10px 20px;
+  }
 }

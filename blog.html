@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>ahui's blog</title>
-      <!-- responsive -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="css/responsive-nav.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!--<![endif]-->
-    <script src="responsive-nav.js"></script>
-    <script src="js/jquery-1.10.1.min.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>ahui's blog</title>
+  <!-- responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="css/responsive-nav.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--<![endif]-->
+  <script src="responsive-nav.js"></script>
+  <script src="js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
 
-    <aside role="navigation" id="nav-sidebar" class="nav-collapse">
-        <nav>
-            <section>
-                <header class="nav-header">ahui's blog</header>
-                <p>live free or die hard</p>
-            </section>
-            <ul>
-                <li><a href="#">Home Page</a></li>
-                <li><a href="#">Post</a></li>
-                <li><a href="#">Album</a></li>
-                <li><a href="#">Technique</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Resume</a></li>
-            </ul>
-        </nav>
-    </aside>
+<aside role="navigation" id="nav-sidebar" class="nav-collapse">
+  <nav>
+    <section>
+      <header class="nav-header">ahui's blog</header>
+      <p>live free or die hard</p>
+    </section>
+    <ul>
+      <li><a href="#">Home Page</a></li>
+      <li><a href="#">Post</a></li>
+      <li><a href="#">Album</a></li>
+      <li><a href="#">Technique</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Resume</a></li>
+    </ul>
+  </nav>
+</aside>
 
-    <article role="main" class="main">
-      <a href="#nav" class="nav-toggle" id="nav-a">Menu</a
-
-    </article>
-    <script>
-      var navigation = responsiveNav("nav-sidebar", {customToggle: ".nav-toggle",openPos: "absolute"});
-    </script>
-  </body>
+<aside role="main" class="main">
+  <a href="#nav" class="nav-toggle" id="nav-a">Menu</a>
+  <article class="frist-article">
+    <header><a href="#">这里是文章标题或连接1试下过长怎么样</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+  <article>
+    <header><a href="#">这里是文章标题或连接1</a></header>
+  </article>
+</aside>
+<script>
+  var navigation = responsiveNav("nav-sidebar", {customToggle: ".nav-toggle", openPos: "absolute"});
+</script>
+</body>
 </html>
