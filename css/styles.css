@@ -25,6 +25,9 @@ body {
   background-image: url(../img/bg.jpg);
   color: #fff;
   font: normal 100%/1.5 "Microsoft YaHei", Helvetica, Arial, sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -80,7 +83,6 @@ a:hover {
   right: 0;
   bottom: 0;
   width: 76%;
-  background: rgba(255,255,255,0.5);
   color: #222222;
 }
 
@@ -142,9 +144,9 @@ nav section {
   -webkit-transition: background .3s ease;
   -moz-transition: background .3s ease;
   transition: background .3s ease;
-  text-shadow: 0 -1px rgba(0,0,0, .5);
+  text-shadow: 0 -1px rgba(0,0,0,.5);
   display: block;
-  padding: .6em 5em .6em 3em;
+  padding: .6em 3em .6em 3em;
   width: 100%;
 }
 
@@ -153,7 +155,8 @@ nav section {
 .nav-collapse li:last-child a { border-bottom: 0 }
 .nav-toggle { display: none }
 
-@media screen and (max-width: 40em) {
+
+@media screen and (max-width: 52em) {
   .js .nav-collapse {
     clip: rect(0 0 0 0);
     max-height: 0;
@@ -245,6 +248,7 @@ nav section {
 }
 
 @media screen and (min-width: 76em) {
-  .nav-collapse { width: 18em }
-  .main { width: auto; left: 18em }
+  .nav-collapse { width: 23em }
+  .main { width: auto; left: 23em }
+  .nav-collapse a { padding-left: 5em}
 }
