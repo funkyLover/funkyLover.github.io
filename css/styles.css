@@ -300,6 +300,6 @@ nav section {
   }
   body {
     background-image: url(../img/m-bg.jpg);
-    background-size: 440px;
+    background-size: cover;
   }
 }
