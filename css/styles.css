@@ -298,8 +298,4 @@ nav section {
   article {
     margin:0 10px 20px;
   }
-  body {
-    background-image: url(../img/m-bg.jpg);
-    background-size: cover;
-  }
 }
